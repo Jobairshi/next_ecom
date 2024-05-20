@@ -1,0 +1,4 @@
+{
+    "ext":".js,.ts",
+    "exec":"npx ts-node ./lib/prisma.ts"
+}
