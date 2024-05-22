@@ -10,14 +10,14 @@ export default function Hero1() {
       <div className="mb-16 text-center lg:mb-0 lg:max-w-lg lg:text-left">
         <div className="mb-6 max-w-xl">
           <div>
-            <p className="bg-teal-accent-400 mb-4 inline-block rounded-full bg-cyan-200 px-3 py-px text-sm font-semibold tracking-wider text-green-900">
+            <p className="bg-teal-accent-400 mb-4 inline-block rounded-full bg-black px-3 py-px text-sm font-semibold tracking-wider text-white">
               This is Flippy
             </p>
           </div>
           <h2 className="mb-6 max-w-lg font-sans text-3xl font-bold tracking-tight text-slate-700 sm:text-5xl sm:leading-snug">
             The #1 Marketplace <br />
             in
-            <span className="inline-block text-cyan-400">Pacific Ocean</span>
+            <span className="inline-block text-black">Pacific Ocean</span>
           </h2>
           <p className="text-base text-gray-700 md:text-lg">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
@@ -27,14 +27,14 @@ export default function Hero1() {
         <div className="flex flex-col items-center justify-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2 lg:justify-start">
           <a
             href="/"
-            className="inline-flex h-12 w-full items-center justify-center rounded-full bg-cyan-400 px-6 font-medium tracking-wide text-white shadow-md outline-none transition duration-200 hover:bg-cyan-400 focus:ring sm:w-auto"
+            className="inline-flex h-12 w-full items-center justify-center rounded-full bg-black px-6 font-medium tracking-wide text-white shadow-md outline-none transition duration-200 hover:bg-gray-400 focus:ring sm:w-auto"
           >
             {" "}
             Start a free Trial{" "}
           </a>
           <a
             href="/"
-            className="inline-flex h-12 w-full items-center justify-center rounded-full border-2 border-cyan-400 px-4 font-semibold text-cyan-400 transition-colors duration-200 hover:border-y-cyan-400 hover:text-cyan-400 sm:w-auto"
+            className="inline-flex h-12 w-full items-center justify-center rounded-full border-2 border-gray-400 px-4 font-semibold text-white transition-colors duration-200 hover:border-y-gray-800 hover:text-black sm:w-auto"
           >
             Watch a demo video
           </a>

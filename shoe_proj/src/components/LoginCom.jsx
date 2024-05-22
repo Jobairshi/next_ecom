@@ -1,44 +1,33 @@
-"use client"
+"use client";
 import React from "react";
 import Image from "next/image";
 import { useRef } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { fetchToken } from "../../storeToken";
-
-
 
 export default function LoginCom() {
-
-  
   const router = useRouter();
-   
-  const  emailRef = useRef();
-   
+
+  const emailRef = useRef();
+
   const passRef = useRef();
 
-  
-
   const handleLogin = async (event) => {
-    
-
     event.preventDefault();
     try {
       const login = await axios.post("http://localhost:4000/login", {
         email: emailRef.current.value,
         password: passRef.current.value,
       });
-
-     
-    //  console.log(login.data.token);
+      
 
       if (login.data.token !== null) {
-       
-     //   console.log(login.data);
-       
-       alert("Login successful");
-      // console.log( login.data[1].id + " here is logoncasalskl");
-       
+        alert("Login successful");
+
+        localStorage.setItem("token", login.data.token);
+        window.location.reload();
+        
+        
       } else {
         alert("Email or password not correct");
       }
@@ -47,7 +36,6 @@ export default function LoginCom() {
       alert("An error occurred while logging in");
     }
   };
-
 
   return (
     <div>
@@ -129,7 +117,6 @@ export default function LoginCom() {
           </div>
         </div>
         <div className="pointer-events-none hidden select-none bg-black shadow-2xl md:block md:w-1/2 lg:w-2/3">
-         
           <Image
             alt=""
             className="h-[800px] w-full object-cover opacity-90"

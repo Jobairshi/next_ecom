@@ -1,13 +1,22 @@
-
+"use client"
 import React from 'react'
 
 export default function Nav() {
+   const token = localStorage.getItem("token");
    
+   console.log(token);
+
+   function DeleteToken()
+   {
+      localStorage.removeItem("token");
+      window.location.reload();
+   }
+
   return (
     <div>
       <header className="relative flex max-w-screen-xl flex-col overflow-hidden px-4 py-4 text-slate-700 md:mx-auto md:flex-row md:items-center">
     <a
-      href="#"
+      href="/"
       className="flex cursor-pointer items-center whitespace-nowrap text-2xl font-black"
     >
       <span className="mr-2 text-4xl text-cyan-400">
@@ -59,15 +68,23 @@ export default function Nav() {
         </li>
         
         <li className="md:mr-12 hover:bg-gray-400 rounded-lg h-10 w-10 items-center mt-auto py-2 px-2 text-center">
-          <a href="/cart/:id">🛒</a>
+          <a href="/cart">🛒</a>
         </li>
         <li className="md:mr-12">
           
-              <a href="/login">
-              <button  className="rounded-full border-2 border-cyan-400 px-6 py-1 text-cyan-600 transition-colors hover:bg-cyan-500 hover:text-white">
-                 login
-              </button>
-              </a>
+              {
+                token?(
+                  <button onClick={DeleteToken}  className="rounded-full border-2 border-cyan-400 px-6 py-1 text-cyan-600 transition-colors hover:bg-cyan-500 hover:text-white">
+                    Logout
+                 </button>
+                  ):(
+                    <a href="/login">
+                    <button  className="rounded-full border-2 border-cyan-400 px-6 py-1 text-cyan-600 transition-colors hover:bg-cyan-500 hover:text-white">
+                       login
+                    </button>
+                    </a>
+                  )
+              }
           
         </li>
       </ul>
