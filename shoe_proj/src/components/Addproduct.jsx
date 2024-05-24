@@ -36,6 +36,10 @@ export default function Addproduct() {
     console.log("Selected Image:", selectedImage?.name);
     const img  = await imageUpload(selectedImage);
     console.log(img.data.display_url);
+    if(img.data.display_url === undefined || img.data.display_url === ""){
+    alert("image not uploaded")
+    return;
+    }
     setImgline( img.data.display_url);
 
 
